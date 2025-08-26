@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday My Love</title>
+  <!-- Favicon hati -->
+  <link rel="icon" type="image/png" href="heart.png">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 50px 20px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .music-control {
+      margin: 30px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 30px;
+      background: #ff6f91;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: background 0.3s;
+      margin: 5px;
+    }
+
+    button:hover {
+      background: #ff3e6c;
+    }
+
+    .page {
+      display: none;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .active {
+      display: block;
+    }
+
+    /* Slideshow */
+    .slideshow-container {
+      position: relative;
+      max-width: 90%;
+      margin: auto;
+    }
+
+    .slides {
+      display: none;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      width: 100%;
+    }
+
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+
+    .dot-container {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .dot {
+      height: 12px;
+      width: 12px;
+      margin: 0 3px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+      cursor: pointer;
+    }
+
+    .active-dot {
+      background-color: #ff3e6c;
+    }
+
+    /* Hati jatuh */
+    .heart {
+      position: fixed;
+      top: -10px;
+      color: #ff3e6c;
+      font-size: 24px;
+      animation: fall linear forwards;
+    }
+
+    @keyframes fall {
+      from { transform: translateY(0) rotate(0deg); opacity: 1; }
+      to { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Musik tetap jalan -->
+  <div class="music-control">
+    <audio id="bg-music" loop>
+      <source src="music.mp3" type="audio/mpeg">
+    </audio>
+    <button onclick="playMusic()">▶ Play Music</button>
+    <button onclick="pauseMusic()">⏸ Pause</button>
+  </div>
+
+  <!-- Page 1 -->
+  <div class="page active" id="page1">
+    <header>
+      <h1>Happy Birthday, My Love ❤️</h1>
+      <p>Hari ini adalah hari spesial untukmu. Aku bersyukur bisa bersamamu, dan semoga kebahagiaan selalu menyertai hidupmu. 💕</p>
+    </header>
+
+    <section class="gallery">
+      <!-- Ganti foto di sini -->
+      <img src="images/photo1.jpg" alt="Memory 1">
+      <img src="images/photo2.jpg" alt="Memory 2">
+      <img src="images/photo3.jpg" alt="Memory 3">
+      <img src="images/photo4.jpg" alt="Memory 4">
+      <img src="images/photo5.jpg" alt="Memory 5">
+      <img src="images/photo6.jpg" alt="Memory 6">
+    </section>
+
+    <button onclick="nextPage(2)">➡ Next Page</button>
+  </div>
+
+  <!-- Page 2 (Slideshow) -->
+  <div class="page" id="page2">
+    <h1>Our Memories 📸</h1>
+    <div class="slideshow-container">
+      <img class="slides fade" src="images/photo4.jpg" alt="Photo 4">
+      <img class="slides fade" src="images/photo5.jpg" alt="Photo 5">
+      <img class="slides fade" src="images/photo6.jpg" alt="Photo 6">
+      <img class="slides fade" src="images/photo7.jpg" alt="Photo 7">
+      <img class="slides fade" src="images/photo8.jpg" alt="Photo 8">
+      <img class="slides fade" src="images/photo9.jpg" alt="Photo 9">
+      <img class="slides fade" src="images/photo10.jpg" alt="Photo 10">
+      <img class="slides fade" src="images/photo11.jpg" alt="Photo 11">
+      <img class="slides fade" src="images/photo12.jpg" alt="Photo 12">
+      <img class="slides fade" src="images/photo13.jpg" alt="Photo 13">
+    </div>
+    <div class="dot-container">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+      <span class="dot" onclick="currentSlide(5)"></span>
+      <span class="dot" onclick="currentSlide(6)"></span>
+      <span class="dot" onclick="currentSlide(7)"></span>
+      <span class="dot" onclick="currentSlide(8)"></span>
+      <span class="dot" onclick="currentSlide(9)"></span>
+      <span class="dot" onclick="currentSlide(10)"></span>
+    </div>
+
+    <button onclick="prevPage(1)">⬅ Back</button>
+    <button onclick="nextPage(3)">➡ Next Page</button>
+  </div>
+
+  <!-- Page 3 -->
+  <div class="page" id="page3">
+    <h1>For You, My Love ❤️</h1>
+    <p>Tak ada kata yang cukup untuk ungkapkan betapa berartinya kamu bagiku. Semoga hari ulang tahunmu penuh cinta, tawa, dan kehangatan. 💖</p>
+    <p>Aku akan selalu di sampingmu, hari ini, esok, dan selamanya. 💑</p>
+
+    <button onclick="prevPage(2)">⬅ Back</button>
+    <button onclick="nextPage(4)">➡ Next Page</button>
+  </div>
+
+  <!-- Page 4 -->
+  <div class="page" id="page4">
+    <h1>Moment Video🎥</h1>
+    <p>Hai sayang pastiin kamu nonton sampai habis yaw hehehe</p>
+    <p>Ini aku buat khusus kamu sayang, maaf ya kalau jelek hehehe</p>
+
+    <video controls>
+      <source src="video.mp4" type="video/mp4">
+    </video>
+    <br>
+    <button onclick="prevPage(3)">⬅ Back</button>
+    <button onclick="nextPage(1)">Back To Start</button>
+  </div>
+
+  <script>
+    const music = document.getElementById("bg-music");
+    const pages = document.querySelectorAll(".page");
+
+    function playMusic() {
+      music.play();
+    }
+
+    function pauseMusic() {
+      music.pause();
+    }
+
+    function showPage(num) {
+      pages.forEach(p => p.classList.remove("active"));
+      document.getElementById("page"+num).classList.add("active");
+    }
+
+    function nextPage(num) {
+      showPage(num);
+    }
+
+    function prevPage(num) {
+      showPage(num);
+    }
+
+    // Slideshow logic
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let slides = document.getElementsByClassName("slides");
+      let dots = document.getElementsByClassName("dot");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active-dot", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active-dot";
+      setTimeout(showSlides, 3000); // Ganti foto setiap 3 detik
+    }
+
+    function currentSlide(n) {
+      slideIndex = n-1;
+      showSlides();
+    }
+
+    // Animasi hati jatuh di Page 3
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerText = "❤";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (3 + Math.random() * 2) + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }
+
+    setInterval(createHeart, 800);
+  </script>
+</body>
+</html>
