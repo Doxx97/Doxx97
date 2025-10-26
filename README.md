@@ -12,16 +12,16 @@
 
 #### Code language
 
-[![](https://skillicons.dev/icons?i=html,css,js,php,bootstrap,laravel&perline=3)](https://skillicons.dev)
+![](https://skillicons.dev/icons?i=html,css,js,php,bootstrap,laravel&perline=3)
 
-#### Connect with me
+#### Touch me
 
-![https://www.instagram.com/screetyo/?hl=id](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)
+[![](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/screetyo/?hl=id)
 
 #### Stats
 
 [![Doxx97 GitHub stats](https://github-readme-stats.vercel.app/api?username=Doxx97&show_icons=true&theme=midnight-purple)
-](https://github.com/anuraghazra/github-readme-stats)
+](https://github.com/Doxx97)
 
 ####
 
