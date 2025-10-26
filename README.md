@@ -1,4 +1,4 @@
-![Raihan Gusta](IMG/github-header-banner.png)
+![Raihan Gusta](IMG/gusta.png)
 
 ###
 
@@ -23,17 +23,10 @@
 [![Doxx97 GitHub stats](https://github-readme-stats.vercel.app/api?username=Doxx97&show_icons=true&theme=midnight-purple)
 ](https://github.com/anuraghazra/github-readme-stats)
 
-<!--
-**Doxx97/Doxx97** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+####
 
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Doxx97/Doxx97/output/pacman-contribution-graph-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Doxx97/Doxx97/output/pacman-contribution-graph.svg">
+  <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/Doxx97/Doxx97/output/pacman-contribution-graph.svg">
+</picture>
